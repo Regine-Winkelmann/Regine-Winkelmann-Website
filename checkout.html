@@ -1,4 +1,4 @@
-<!DOCTYPE html><html data-bs-theme="light" lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no"><title>RegineWinkelmann</title><link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic&amp;display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cabin:700&amp;display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Smythe&amp;display=swap"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"><link rel="stylesheet" href="assets/css/styles.min.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"></head><body><nav class="navbar navbar-expand-xl fixed-top pb-4 pb-sm-4 pb-md-3 pb-lg-3 pb-xl-3 pb-xxl-3" id="mainNav"><div class="container"><img src="assets/img/DachsSymbolEffects.png" width="52" height="50"><a class="navbar-brand d-none d-sm-inline-block d-md-inline-block" href="index.html#">Regine Winkelmann</a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navbarResponsive" type="button" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation" value="Menu"><i class="fa fa-bars"></i></button><div class="collapse navbar-collapse" id="navbarResponsive"><ul class="navbar-nav ms-auto"><li class="nav-item nav-link"><a class="nav-link" href="index.html#header" data-bs-target="index.html#header">Startseite</a></li><li class="nav-item nav-link"><a class="nav-link" href="index.html#about">Über die Autorin</a></li><li class="nav-item nav-link"><a class="nav-link" href="index.html#product">Der Dachs und die Welt</a></li><li class="nav-item nav-link"><a class="nav-link" href="#contact">Kontakt</a></li><li class="nav-item nav-link"><div id="vue-cart-badge" class="nav-link-wrapper" style="visibility: hidden;">
+<!DOCTYPE html><html data-bs-theme="light" lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no"><title>RegineWinkelmann</title><link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic&amp;display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cabin:700&amp;display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Smythe&amp;display=swap"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"><link rel="stylesheet" href="assets/css/styles.min.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"></head><body><nav class="navbar navbar-expand-xl fixed-top pb-4 pb-sm-4 pb-md-3 pb-lg-3 pb-xl-3 pb-xxl-3" id="mainNav"><div class="container"><a href="index.html#"><img src="assets/img/DachsSymbolEffects.png" width="52" height="50"></a><a class="navbar-brand d-none d-sm-inline-block d-md-inline-block" href="index.html#">Regine Winkelmann</a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navbarResponsive" type="button" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation" value="Menu"><i class="fa fa-bars"></i></button><div class="collapse navbar-collapse" id="navbarResponsive"><ul class="navbar-nav ms-auto"><li class="nav-item nav-link"><a class="nav-link" href="index.html#header" data-bs-target="index.html#header">Startseite</a></li><li class="nav-item nav-link"><a class="nav-link" href="index.html#about">Über die Autorin</a></li><li class="nav-item nav-link"><a class="nav-link" href="index.html#product">Der Dachs und die Welt</a></li><li class="nav-item nav-link"><a class="nav-link" href="#contact">Kontakt</a></li><li class="nav-item nav-link"><div id="vue-cart-badge" class="nav-link-wrapper" style="visibility: hidden;">
   <a class="nav-link" href="cart.html">
     <span class="d-inline-block d-sm-inline-block d-md-inline-block d-lg-inline-block d-xl-none">Warenkorb</span>
     <i class="fa fa-shopping-basket"></i>
@@ -65,23 +65,57 @@
 <script type="text/javascript">
 (() => {
   // ---- Konfiguration ----
-  const WORKER_ENDPOINT     = "https://reginewinkelmannstripe.vaax.workers.dev/create-checkout-session";
-  const PUBLISHABLE_KEY_LIVE= "pk_live_xxxxxxxxxxxxxxxxxxxxx";
+  // Worker-Endpoint wird aus Shop.js geholt - KEINE Fallbacks!
+  function getWorkerEndpoint() {
+    if (!window.Shop || typeof window.Shop.getWorkerEndpoint !== 'function') {
+      throw new Error('Shop.js ist nicht verfügbar! Checkout kann nicht initialisiert werden.');
+    }
+    return window.Shop.getWorkerEndpoint() + '/create-checkout-session';
+  }
+  
+  const PUBLISHABLE_KEY_LIVE= "pk_live_51RpPrnGSHI4ZzMNSGvJOHVdy2fukEYUN54rY83R0bFZZhdkYV91Nr068Tvc8tPdxSRp7BoXTlRTtKU3sCPbMbQhS00r9r83zzl";
   const PUBLISHABLE_KEY_TEST= "pk_test_51RpPrnGSHI4ZzMNSYJ9oVy4H9y7YKVJ0Cr7bLmzvNQkAL9ZPPxDG9jycXSd41TyyLeNc09AKYJtXuFI3vyBDjZwV001ffxZKzp";
 
-  // Success-/Cancel-URLs für Test & Live
-  const SUCCESS_URL_TEST = "https://reginewinkelmann.de/success.html?session_id={CHECKOUT_SESSION_ID}";
-  const CANCEL_URL_TEST  = "https://reginewinkelmann.de/cart.html";
-  const SUCCESS_URL_LIVE = "https://reginewinkelmann.de/success.html?session_id={CHECKOUT_SESSION_ID}";
-  const CANCEL_URL_LIVE  = "https://reginewinkelmann.de/cart.html";
+  // URLs werden von shop.js basierend auf Umgebung bereitgestellt
+  function getUrls() {
+    if (!window.Shop || typeof window.Shop.getEnvironmentInfo !== 'function') {
+      throw new Error('Shop.js ist nicht verfügbar! URL-Konfiguration kann nicht geladen werden.');
+    }
+    
+    const baseUrl = `${window.location.protocol}//${window.location.host}`;
+    const isTest = window.Shop.isTestMode();
+    
+    if (isTest) {
+      return {
+        SUCCESS_URL: `${baseUrl}/success.html?session_id={CHECKOUT_SESSION_ID}`,
+        CANCEL_URL: `${baseUrl}/cart.html`,
+        ERROR_URL: `${baseUrl}/error.html?session_id={CHECKOUT_SESSION_ID}`
+      };
+    } else {
+      return {
+        SUCCESS_URL: "https://reginewinkelmann.de/success.html?session_id={CHECKOUT_SESSION_ID}",
+        CANCEL_URL: "https://reginewinkelmann.de/cart.html", 
+        ERROR_URL: "https://reginewinkelmann.de/error.html?session_id={CHECKOUT_SESSION_ID}"
+      };
+    }
+  }
 
-  // Hilfsfunktion für Mode
+  // Hilfsfunktion für Mode - erwartet funktionierende shop.js!
   function cfg() {
-    const isTest = (window.Shop && Shop.isTestMode());
+    if (!window.Shop || typeof Shop.isTestMode !== 'function') {
+      throw new Error('Shop.js ist nicht verfügbar! Modus kann nicht ermittelt werden.');
+    }
+    
+    const isTest = window.Shop.isTestMode();
+    const urls = getUrls();
+    
+    console.log('🔍 Checkout-Modus:', isTest ? 'TEST' : 'LIVE', 'für', window.location.hostname);
+    
     return {
       PUBLISHABLE_KEY: isTest ? PUBLISHABLE_KEY_TEST : PUBLISHABLE_KEY_LIVE,
-      SUCCESS_URL:     isTest ? SUCCESS_URL_TEST     : SUCCESS_URL_LIVE,
-      CANCEL_URL:      isTest ? CANCEL_URL_TEST     : CANCEL_URL_LIVE,
+      SUCCESS_URL: urls.SUCCESS_URL,
+      CANCEL_URL: urls.CANCEL_URL,
+      ERROR_URL: urls.ERROR_URL,
     };
   }
 
@@ -108,20 +142,31 @@
       },
       methods: {
         async initCheckout() {
-          const { PUBLISHABLE_KEY, SUCCESS_URL, CANCEL_URL } = cfg();
-
-          // Warenkorb prüfen
-          const items = Shop.toCheckoutItems();
-          if (!items.length) {
-            this.showError("Warenkorb leer. Bitte zuerst Artikel hinzufügen.");
+          // Shop.js Verfügbarkeit prüfen
+          if (!window.Shop) {
+            this.handleCriticalError('Shop.js ist nicht geladen! Bitte Seite neu laden.', null);
             return;
           }
 
+          let sessionId = null;
+
           try {
+            const { PUBLISHABLE_KEY, SUCCESS_URL, CANCEL_URL } = cfg();
+
+            // Warenkorb prüfen
+            const items = Shop.toCheckoutItems();
+            if (!items.length) {
+              this.showError("Warenkorb leer. Bitte zuerst Artikel hinzufügen.");
+              return;
+            }
             this.loadingText = "Checkout wird geladen...";
 
+            // Worker-Endpoint dynamisch ermitteln
+            const workerEndpoint = getWorkerEndpoint();
+            console.log('🚀 Verwende Worker-Endpoint:', workerEndpoint);
+
             // Session beim Worker anlegen
-            const res = await fetch(WORKER_ENDPOINT, {
+            const res = await fetch(workerEndpoint, {
               method: "POST",
               headers: { "Content-Type": "application/json" },
               body: JSON.stringify({
@@ -134,21 +179,49 @@
             });
 
             const data = await res.json();
-            if (!res.ok) throw new Error(data?.error?.message || data?.error || "Session konnte nicht erstellt werden.");
+            
+            // Session-ID extrahieren falls vorhanden
+            if (data.id) {
+              sessionId = data.id;
+            }
+
+            if (!res.ok) {
+              const errorMsg = data?.error?.message || data?.error || "Session konnte nicht erstellt werden.";
+              
+              // Bei kritischen Server-Fehlern zur Error-Seite weiterleiten
+              if (res.status >= 500 || res.status === 400) {
+                this.handleCriticalError(errorMsg, sessionId);
+                return;
+              }
+              
+              throw new Error(errorMsg);
+            }
 
             // Embedded Checkout
             if (data.client_secret) {
               this.loadingText = "Formular wird aufgebaut...";
               
-              const stripe = Stripe(PUBLISHABLE_KEY);
-              const checkout = await stripe.initEmbeddedCheckout({ clientSecret: data.client_secret });
-              
-              // Checkout mounten
-              checkout.mount("#stripe-checkout");
-              
-              // Warten bis Stripe gerendert hat
-              this.waitForStripeContent();
-              return;
+              try {
+                const stripe = Stripe(PUBLISHABLE_KEY);
+                const checkout = await stripe.initEmbeddedCheckout({ 
+                  clientSecret: data.client_secret,
+                  onComplete: () => {
+                    // Optional: Erfolg-Handler
+                    console.log('Checkout completed');
+                  }
+                });
+                
+                // Checkout mounten
+                checkout.mount("#stripe-checkout");
+                
+                // Warten bis Stripe gerendert hat
+                this.waitForStripeContent(sessionId);
+                return;
+              } catch (stripeError) {
+                console.error('Stripe initialization failed:', stripeError);
+                this.handleCriticalError('Stripe konnte nicht geladen werden', sessionId);
+                return;
+              }
             }
 
             // Fallback: Redirect
@@ -159,32 +232,81 @@
 
             throw new Error("Unerwartete Antwort vom Server.");
           } catch (e) {
-            console.error(e);
-            this.showError("Fehler: " + (e?.message || e));
+            console.error('Checkout initialization error:', e);
+            
+            // Bei Netzwerk-/Server-Fehlern zur Error-Seite
+            if (e.name === 'TypeError' && e.message.includes('fetch')) {
+              this.handleCriticalError('Verbindung zum Server fehlgeschlagen', sessionId);
+            } else {
+              // Andere Fehler zunächst inline anzeigen
+              this.showError("Fehler: " + (e?.message || e));
+              
+              // Nach 5 Sekunden trotzdem zur Error-Seite wenn Fehler persistent
+              setTimeout(() => {
+                if (this.isError) {
+                  this.redirectToError(sessionId);
+                }
+              }, 5000);
+            }
           }
         },
 
-        waitForStripeContent() {
+        waitForStripeContent(sessionId = null) {
+          let attempts = 0;
+          const maxAttempts = 100; // 5 Sekunden bei 50ms Intervall
+          
           const checkInterval = setInterval(() => {
+            attempts++;
             const checkoutEl = document.getElementById("stripe-checkout");
+            
             if (checkoutEl && checkoutEl.children.length > 0) {
               this.isLoading = false;
               this.message = "";
               clearInterval(checkInterval);
+              return;
+            }
+            
+            // Nach zu vielen Versuchen Fehler anzeigen
+            if (attempts >= maxAttempts) {
+              clearInterval(checkInterval);
+              console.error('Stripe content failed to load after 5 seconds');
+              this.handleCriticalError('Stripe Formular konnte nicht geladen werden', sessionId);
             }
           }, 50);
-
-          // Fallback: nach 5 Sekunden
-          setTimeout(() => {
-            this.isLoading = false;
-            clearInterval(checkInterval);
-          }, 5000);
         },
 
         showError(errorMsg) {
           this.isLoading = false;
           this.message = errorMsg;
           this.isError = true;
+        },
+
+        // Weiterleitung zur Error-Seite mit Session-ID
+        redirectToError(sessionId = null) {
+          const { ERROR_URL } = cfg();
+          let errorUrl = ERROR_URL;
+          
+          if (sessionId) {
+            errorUrl = errorUrl.replace('{CHECKOUT_SESSION_ID}', sessionId);
+          } else {
+            // Fallback ohne Session-ID
+            errorUrl = errorUrl.replace('?session_id={CHECKOUT_SESSION_ID}', '');
+          }
+          
+          console.log('Redirecting to error page:', errorUrl);
+          window.location.href = errorUrl;
+        },
+
+        // Kritische Fehler mit sofortiger Weiterleitung
+        handleCriticalError(error, sessionId = null) {
+          console.error('Critical checkout error:', error);
+          
+          // Kurz Fehlermeldung anzeigen, dann weiterleiten
+          this.showError('Fehler beim Checkout. Sie werden weitergeleitet...');
+          
+          setTimeout(() => {
+            this.redirectToError(sessionId);
+          }, 2000); // 2 Sekunden warten
         }
       },
       mounted() {
