@@ -78,7 +78,7 @@
 
   // URLs werden von shop.js basierend auf Umgebung bereitgestellt
   function getUrls() {
-    if (!window.Shop || typeof window.Shop.getEnvironmentInfo !== 'function') {
+    if (!window.Shop || typeof window.Shop.isTestMode !== 'function') {
       throw new Error('Shop.js ist nicht verfügbar! URL-Konfiguration kann nicht geladen werden.');
     }
     
@@ -102,7 +102,7 @@
 
   // Hilfsfunktion für Mode - erwartet funktionierende shop.js!
   function cfg() {
-    if (!window.Shop || typeof Shop.isTestMode !== 'function') {
+    if (!window.Shop || typeof window.Shop.isTestMode !== 'function') {
       throw new Error('Shop.js ist nicht verfügbar! Modus kann nicht ermittelt werden.');
     }
     
@@ -154,7 +154,7 @@
             const { PUBLISHABLE_KEY, SUCCESS_URL, CANCEL_URL } = cfg();
 
             // Warenkorb prüfen
-            const items = Shop.toCheckoutItems();
+            const items = window.Shop.toCheckoutItems();
             if (!items.length) {
               this.showError("Warenkorb leer. Bitte zuerst Artikel hinzufügen.");
               return;
