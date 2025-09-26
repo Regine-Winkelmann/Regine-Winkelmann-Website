@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html data-bs-theme="light" lang="de">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>RegineWinkelmann</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/Cabin.css">
+    <link rel="stylesheet" href="assets/css/Lora.css">
+    <link rel="stylesheet" href="assets/css/Smythe.css">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/bss-overrides.css">
+    <link rel="stylesheet" href="assets/css/blog-slider.compiled.css">
+    <link rel="stylesheet" href="assets/css/Footer-Clean-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <link rel="stylesheet" href="assets/css/Lightbox-Gallery-baguetteBox.min.css">
+    <link rel="stylesheet" href="assets/css/style.compiled.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-xl fixed-top pb-4 pb-sm-4 pb-md-3 pb-lg-3 pb-xl-3 pb-xxl-3" id="mainNav">
+        <div class="container"><img src="assets/img/DachsSymbolEffects.png" width="52" height="50"><a class="navbar-brand d-none d-sm-inline-block d-md-inline-block" href="#">Regine Winkelmann</a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navbarResponsive" type="button" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation" value="Menu"><i class="fa fa-bars"></i></button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item nav-link"><a class="nav-link" href="index.html#header" data-bs-target="index.html#header">Startseite</a></li>
+                    <li class="nav-item nav-link"><a class="nav-link" href="index.html#about">Über die Autorin</a></li>
+                    <li class="nav-item nav-link"><a class="nav-link" href="index.html#product">Der Dachs und die Welt</a></li>
+                    <li class="nav-item nav-link"><a class="nav-link" href="index.html#blog">Blog</a></li>
+                    <li class="nav-item nav-link"><a class="nav-link" href="#contact">contact</a></li>
+                    <li class="nav-item nav-link"><div id="vue-cart-badge" class="nav-link-wrapper" style="visibility: hidden;">
+  <a class="nav-link" href="cart.html">
+    <span class="d-inline-block d-sm-inline-block d-md-inline-block d-lg-inline-block d-xl-none">Warenkorb</span>
+    <i class="fa fa-shopping-basket"></i>
+    <span v-if="cartItemCount > 0" class="badge price-badge text-bg-primary text-white">{{ cartItemCount }}</span>
+  </a>
+</div>
+
+<script type="text/javascript">
+(() => {
+  function onReady(fn){
+    if (document.readyState === "complete" || document.readyState === "interactive") setTimeout(fn,0);
+    else document.addEventListener("DOMContentLoaded", fn, { once: true });
+  }
+  function whenShopAndVue(cb){
+    if (window.Shop && window.Vue && window.Vue.createApp) cb();
+    else setTimeout(() => whenShopAndVue(cb), 20);
+  }
+
+  onReady(() => whenShopAndVue(() => {
+    const { createApp } = window.Vue;
+
+    createApp({
+      data(){ 
+        return { 
+          cartItemCount: 0 
+        }; 
+      },
+      methods:{
+        updateCount(){
+          this.cartItemCount = Shop.cartCount();
+        }
+      },
+      mounted(){
+        this.updateCount();
+        // Vue ist ready - Element sichtbar machen
+        this.$el.style.visibility = 'visible';
+        // Live-Updates: reagiert auf Shop.add / sonstige Änderungen
+        Shop.onCartChange(() => this.updateCount());
+      }
+    }).mount('#vue-cart-badge');
+  }));
+})();
+</script></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <header class="masthead shorthead" style="background: url(&quot;assets/img/gallery/pumpkinpicture.jpg&quot;) bottom / cover;height: 50vh;">
+        <div class="intro-body">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 mx-auto">
+                        <h1 class="brand-heading">Impressum</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section class="text-center py-4 content-section" id="checkout">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-8 mx-auto" style="text-align: left;">    <h1>Impressum</h1>
+    <p>Angaben gemäß § 5 TMG</p>
+    <p>Regine Winkelmann<br>Wuppertaler Str. 76<br>45549 Sprockhövel</p>
+    <p><strong>Vertreten durch:</strong><br>Regine Winkelmann</p>
+    <p><strong>Kontakt:</strong><br>Telefon: 02324-71097<br>E-Mail:&nbsp;<a
+            href="mailto:info@reginewinkelmann.de">info@reginewinkelmann.de</a></p>
+    <p><strong>Aufsichtsbehörde:</strong><br>Architektenkammer+Nordrhein-Westfalen</p>
+    <p><strong>Berufsbezeichnung:</strong><br>Architekten<br>Zuständige Kammer: Architektenkammer Nordrhein-Westfalen
+        (AKNW)<br>Verliehen durch: Bundesrepublik Deutschland</p>
+    <p>&nbsp;</p>
+    <p><strong>Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV:</strong><br>Regine Winkelmann<br>Wuppertaler Str.
+        76<br>45549 Sprockhövel</p>
+    <p><strong>Haftungsausschluss:</strong><br><br><strong>Haftung für Inhalte</strong><br><br>Die Inhalte unserer
+        Seiten wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte
+        können wir jedoch keine Gewähr übernehmen. Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte
+        auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als
+        Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen
+        oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen. Verpflichtungen zur Entfernung
+        oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt. Eine
+        diesbezügliche Haftung ist jedoch erst ab dem Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung möglich.
+        Bei Bekanntwerden von entsprechenden Rechtsverletzungen werden wir diese Inhalte umgehend
+        entfernen.<br><br><strong>Haftung für Links</strong><br><br>Unser Angebot enthält Links zu externen Webseiten
+        Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine
+        Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der
+        Seiten verantwortlich. Die verlinkten Seiten wurden zum Zeitpunkt der Verlinkung auf mögliche Rechtsverstöße
+        überprüft. Rechtswidrige Inhalte waren zum Zeitpunkt der Verlinkung nicht erkennbar. Eine permanente inhaltliche
+        Kontrolle der verlinkten Seiten ist jedoch ohne konkrete Anhaltspunkte einer Rechtsverletzung nicht zumutbar.
+        Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Links umgehend
+        entfernen.<br><br><strong>Urheberrecht</strong><br><br>Die durch die Seitenbetreiber erstellten Inhalte und
+        Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung
+        und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des
+        jeweiligen Autors bzw. Erstellers. Downloads und Kopien dieser Seite sind nur für den privaten, nicht
+        kommerziellen Gebrauch gestattet. Soweit die Inhalte auf dieser Seite nicht vom Betreiber erstellt wurden,
+        werden die Urheberrechte Dritter beachtet. Insbesondere werden Inhalte Dritter als solche gekennzeichnet.
+        Sollten Sie trotzdem auf eine Urheberrechtsverletzung aufmerksam werden, bitten wir um einen entsprechenden
+        Hinweis. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Inhalte umgehend
+        entfernen.<br><br><strong>Datenschutz</strong><br><br>Die Nutzung unserer Webseite ist in der Regel ohne Angabe
+        personenbezogener Daten möglich. Soweit auf unseren Seiten personenbezogene Daten (beispielsweise Name,
+        Anschrift oder eMail-Adressen) erhoben werden, erfolgt dies, soweit möglich, stets auf freiwilliger Basis. Diese
+        Daten werden ohne Ihre ausdrückliche Zustimmung nicht an Dritte weitergegeben.<br>Wir weisen darauf hin, dass
+        die Datenübertragung im Internet (z.B. bei der Kommunikation per E-Mail) Sicherheitslücken aufweisen kann. Ein
+        lückenloser Schutz der Daten vor dem Zugriff durch Dritte ist nicht möglich.<br>Der Nutzung von im Rahmen der
+        Impressumspflicht veröffentlichten Kontaktdaten durch Dritte zur Übersendung von nicht ausdrücklich
+        angeforderter Werbung und Informationsmaterialien wird hiermit ausdrücklich widersprochen. Die Betreiber der
+        Seiten behalten sich ausdrücklich rechtliche Schritte im Falle der unverlangten Zusendung von
+        Werbeinformationen, etwa durch Spam-Mails, vor.<br><br><br><strong>Google Analytics</strong><br><br>Diese
+        Website benutzt Google Analytics, einen Webanalysedienst der Google Inc. (“Google“). Google Analytics verwendet
+        sog. “Cookies“, Textdateien, die auf Ihrem Computer gespeichert werden und die eine Analyse der Benutzung der
+        Website durch Sie ermöglicht. Die durch den Cookie erzeugten Informationen über Ihre Benutzung dieser Website
+        (einschließlich Ihrer IP-Adresse) wird an einen Server von Google in den USA übertragen und dort gespeichert.
+        Google wird diese Informationen benutzen, um Ihre Nutzung der Website auszuwerten, um Reports über die
+        Websiteaktivitäten für die Websitebetreiber zusammenzustellen und um weitere mit der Websitenutzung und der
+        Internetnutzung verbundene Dienstleistungen zu erbringen. Auch wird Google diese Informationen gegebenenfalls an
+        Dritte übertragen, sofern dies gesetzlich vorgeschrieben oder soweit Dritte diese Daten im Auftrag von Google
+        verarbeiten. Google wird in keinem Fall Ihre IP-Adresse mit anderen Daten der Google in Verbindung bringen. Sie
+        können die Installation der Cookies durch eine entsprechende Einstellung Ihrer Browser Software verhindern; wir
+        weisen Sie jedoch darauf hin, dass Sie in diesem Fall gegebenenfalls nicht sämtliche Funktionen dieser Website
+        voll umfänglich nutzen können. Durch die Nutzung dieser Website erklären Sie sich mit der Bearbeitung der über
+        Sie erhobenen Daten durch Google in der zuvor beschriebenen Art und Weise und zu dem zuvor benannten Zweck
+        einverstanden.</p>
+    <p>&nbsp;</p>
+    <div id="link">Impressum vom&nbsp;<a href="https://www.impressum-generator.de/">Impressum
+            Generator</a>&nbsp;der&nbsp;<a href="https://www.kanzlei-hasselbach.de/standorte/bonn/">Kanzlei Hasselbach,
+            Bonn</a></div></div>
+            </div>
+        </div>
+    </section>
+    <footer class="py-0">
+        <div class="p-3 mb-2">
+            <div class="container text-center">
+                <div class="row">
+                    <div class="col-12 col-sm-12 col-md-5">
+                        <p class="my-2">2025 © Regine Winkelmann</p>
+                    </div>
+                    <div class="col-2 d-none d-sm-none d-md-block"><img src="assets/img/DachsSymbolEffects.png" width="58" height="56"></div>
+                    <div class="col-12 col-sm-12 col-md-5">
+                        <ul class="list-inline my-2">
+                            <li class="list-inline-item"><a href="impressum.html">Impressum</a></li>
+                            <li class="list-inline-item"><a href="agb.html">AGB</a></li>
+                            <li class="list-inline-item"><a href="widerrufsbelehrung.html">Widerrufsbelehrung</a></li>
+                            <li class="list-inline-item"><a href="versand.html">Versand</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="p-2" style="background: #1c1c1c;">
+            <div class="container text-center">
+                <div class="row">
+                    <div class="col"><div class="vaax-copyright" id="vaax-button" style="color:#fff;">
+    <a href="https://va.ax/" style="color: #fff; text-decoration: none; font-family: Arial, Helvetica, sans-serif;">Webdesign realisiert durch die <i style="content: ''; width: 16px; height: 16px; position: relative; top: 2px; display: inline-block; background-position: center; background-repeat: no-repeat; background-size: contain; background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxODguMjc0IiBoZWlnaHQ9IjE5NC42MiIgdmlld0JveD0iMCAwIDE4OC4yNzQgMTk0LjYyIj4NCiAgPHBhdGggaWQ9IkxvZ29TaW5nbGVXaGl0ZSIgZD0iTTEzOC4yODYsMTguMDdsOTMuODY3LDE0OS42MDdMMjA0LjUxLDE4Mi4zOTFjLTIyLjAxNS0zNS4wNzUtNDMuOTQ0LTcwLTY2LjI0Mi0xMDUuNTIzTDg1LjUwNywxNjEuMDIybDI3LjkyNywxNC44N0wxMzguMywxMzYuMzQ0bDM4LjIyOSw2MC45LTI3LjYxNiwxNC43MTRjLTMuNDQ1LTUuNDMyLTYuODIxLTEwLjc1LTEwLjYxNy0xNi43MjhMMTI3LjQ4MiwyMTIuNjlsLTgzLjYtNDQuMTc3Qzc1LjM3LDExOC4zNDYsMTA2LjY2OCw2OC40NiwxMzguMjg2LDE4LjA3WiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTQzLjg4IC0xOC4wNykiIGZpbGw9IiNmZmYiLz4NCjwvc3ZnPg0K);"></i> <span class="vaax-title">VAAX Multimedia Agentur</span></a>
+  </div></div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/bs-init.js"></script>
+    <script src="assets/js/grayscale.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://js.stripe.com/v3/"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+    <script src="assets/js/Lightbox-Gallery-baguetteBox.min.js"></script>
+    <script src="assets/js/Lightbox-Gallery.js"></script>
+    <script src="assets/js/shop.js"></script>
+</body>
+
+</html>

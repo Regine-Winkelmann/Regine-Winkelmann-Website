@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html data-bs-theme="light" lang="de">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>RegineWinkelmann</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/Cabin.css">
+    <link rel="stylesheet" href="assets/css/Lora.css">
+    <link rel="stylesheet" href="assets/css/Smythe.css">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/bss-overrides.css">
+    <link rel="stylesheet" href="assets/css/blog-slider.compiled.css">
+    <link rel="stylesheet" href="assets/css/Footer-Clean-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <link rel="stylesheet" href="assets/css/Lightbox-Gallery-baguetteBox.min.css">
+    <link rel="stylesheet" href="assets/css/style.compiled.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-xl fixed-top pb-4 pb-sm-4 pb-md-3 pb-lg-3 pb-xl-3 pb-xxl-3" id="mainNav">
+        <div class="container"><img src="assets/img/DachsSymbolEffects.png" width="52" height="50"><a class="navbar-brand d-none d-sm-inline-block d-md-inline-block" href="#">Regine Winkelmann</a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navbarResponsive" type="button" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation" value="Menu"><i class="fa fa-bars"></i></button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item nav-link"><a class="nav-link" href="index.html#header" data-bs-target="index.html#header">Startseite</a></li>
+                    <li class="nav-item nav-link"><a class="nav-link" href="index.html#about">Über die Autorin</a></li>
+                    <li class="nav-item nav-link"><a class="nav-link" href="index.html#product">Der Dachs und die Welt</a></li>
+                    <li class="nav-item nav-link"><a class="nav-link" href="index.html#blog">Blog</a></li>
+                    <li class="nav-item nav-link"><a class="nav-link" href="#contact">contact</a></li>
+                    <li class="nav-item nav-link"><div id="vue-cart-badge" class="nav-link-wrapper" style="visibility: hidden;">
+  <a class="nav-link" href="cart.html">
+    <span class="d-inline-block d-sm-inline-block d-md-inline-block d-lg-inline-block d-xl-none">Warenkorb</span>
+    <i class="fa fa-shopping-basket"></i>
+    <span v-if="cartItemCount > 0" class="badge price-badge text-bg-primary text-white">{{ cartItemCount }}</span>
+  </a>
+</div>
+
+<script type="text/javascript">
+(() => {
+  function onReady(fn){
+    if (document.readyState === "complete" || document.readyState === "interactive") setTimeout(fn,0);
+    else document.addEventListener("DOMContentLoaded", fn, { once: true });
+  }
+  function whenShopAndVue(cb){
+    if (window.Shop && window.Vue && window.Vue.createApp) cb();
+    else setTimeout(() => whenShopAndVue(cb), 20);
+  }
+
+  onReady(() => whenShopAndVue(() => {
+    const { createApp } = window.Vue;
+
+    createApp({
+      data(){ 
+        return { 
+          cartItemCount: 0 
+        }; 
+      },
+      methods:{
+        updateCount(){
+          this.cartItemCount = Shop.cartCount();
+        }
+      },
+      mounted(){
+        this.updateCount();
+        // Vue ist ready - Element sichtbar machen
+        this.$el.style.visibility = 'visible';
+        // Live-Updates: reagiert auf Shop.add / sonstige Änderungen
+        Shop.onCartChange(() => this.updateCount());
+      }
+    }).mount('#vue-cart-badge');
+  }));
+})();
+</script></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <header class="masthead shorthead" style="background: url(&quot;assets/img/gallery/pumpkinpicture.jpg&quot;) bottom / cover;height: 50vh;">
+        <div class="intro-body">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 mx-auto">
+                        <h1 class="brand-heading">Allgemeine Geschäftsbedingungen</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section class="text-center py-4 content-section" id="checkout">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-8 mx-auto" style="text-align: left;"><h1>Allgemeine Geschäftsbedingungen</h1>
+<h3>§ 1 Geltung, Begriffsdefinitionen</h3>
+<p>(1) Regine Winkelmann, Wuppertaler Str. 76, 45549 Sprockhövel, Deutschland (im Folgenden: „wir“ oder „Regine Winkelmann“) betreibt unter der Webseite https://reginewinkelmann.de/ einen Online-Shop für Waren. Die nachfolgenden allgemeinen Geschäftsbedingungen gelten für alle Leistungen zwischen uns und unseren Kunden (im Folgenden: „Kunde“ oder „Sie“) in ihrer zum Zeitpunkt der Bestellung gültigen Fassung, soweit nicht etwas anderes ausdrücklich vereinbart wurde.</p>
+<p>(2) „Verbraucher“ im Sinne dieser Geschäftsbedingungen ist jede natürliche Person, die ein Rechtsgeschäft zu Zwecken abschließt, die überwiegend weder ihrer gewerblichen noch ihrer selbständigen beruflichen Tätigkeit zugerechnet werden können. „Unternehmer“ ist eine natürliche oder juristische Person oder eine rechtsfähige Personengesellschaft, die bei Abschluss eines Rechtsgeschäfts in Ausübung ihrer gewerblichen oder selbständigen beruflichen Tätigkeit handelt, wobei eine rechtsfähige Personengesellschaft eine Personengesellschaft ist, die mit der Fähigkeit ausgestattet ist, Rechte zu erwerben und Verbindlichkeiten einzugehen.</p>
+<h3>§ 2 Zustandekommen der Verträge, Speicherung des Vertragstextes</h3>
+<p>(1) Die folgenden Regelungen über den Vertragsabschluss gelten für Bestellungen über unseren Online-Shop unter https://reginewinkelmann.de/</p>
+<p>(2) Unsere Produktdarstellungen im Internet sind unverbindlich und kein verbindliches Angebot zum Abschluss eines Vertrages.</p>
+<p>(3) Bei Eingang einer Bestellung in unserem Online-Shop gelten folgende Regelungen: Der Kunde gibt ein bindendes Vertragsangebot ab, indem er die in unserem Online-Shop vorgesehene Bestellprozedur erfolgreich durchläuft. Die Bestellung erfolgt in folgenden Schritten:</p>
+<ol>
+<li>Auswahl der gewünschten Ware,</li>
+<li>Hinzufügen der Produkte durch Anklicken des entsprechenden Buttons (z.B. „In den Warenkorb“, „In die Einkaufstasche“ o.ä.),</li>
+<li>Prüfung der Angaben im Warenkorb,</li>
+<li>Aufrufen der Bestellübersicht durch Anklicken des entsprechenden Buttons (z.B. „Weiter zur Kasse“, „Weiter zur Zahlung“, „Zur Bestellübersicht“ o.ä.),</li>
+<li>Eingabe/Prüfung der Adress- und Kontaktdaten, Auswahl der Zahlungsart, Bestätigung der AGB und Widerrufsbelehrung,</li>
+<li>Abschluss der Bestellung durch Betätigung des Buttons „Jetzt kaufen“. Dies stellt Ihre verbindliche Bestellung dar.</li>
+<li>Der Vertrag kommt zustande, indem Ihnen innerhalb von drei Werktagen an die angegebene E-Mail-Adresse eine Bestellbestätigung von uns zugeht.</li>
+</ol>
+<p>(4) Im Falle des Vertragsschlusses kommt der Vertrag mit&nbsp;Regine Winkelmann, Wuppertaler Str. 76, 45549 Sprockhövel, Deutschland zustande.</p>
+<p>(5) Vor der Bestellung können die Vertragsdaten über die Druckfunktion des Browsers ausgedruckt oder elektronisch gesichert werden. Die Abwicklung der Bestellung und Übermittlung aller im Zusammenhang mit dem Vertragsschluss erforderlichen Informationen, insbesondere der Bestelldaten, der AGB und der Widerrufsbelehrung, erfolgt per E-Mail nach dem Auslösen der Bestellung durch Sie, zum Teil automatisiert. Wir speichern den Vertragstext nach Vertragsschluss nicht.</p>
+<p>(6) Eingabefehler können mittels der üblichen Tastatur-, Maus- und Browser-Funktionen (z.B. »Zurück-Button« des Browsers) berichtigt werden. Sie können auch dadurch berichtigt werden, dass Sie den Bestellvorgang vorzeitig abbrechen, das Browserfenster schließen und den Vorgang wiederholen.</p>
+<p>(7) Die Abwicklung der Bestellung und Übermittlung aller im Zusammenhang mit dem Vertragsschluss erforderlichen Informationen erfolgt per E-Mail zum Teil automatisiert. Sie haben deshalb sicherzustellen, dass die von Ihnen bei uns hinterlegte E-Mail-Adresse zutreffend ist, der Empfang der E-Mails technisch sichergestellt und insbesondere nicht durch SPAM-Filter verhindert wird.</p>
+<h3>§ 3 Gegenstand des Vertrages und wesentliche Merkmale der Produkte</h3>
+<p>(1) Bei unserem Online-Shop ist Vertragsgegenstand:</p>
+<ol style="list-style-type: lower-alpha;">
+<li>Der Verkauf von Waren. Die konkret angebotenen Waren können Sie unseren Artikelseiten entnehmen.</li>
+</ol>
+<p>(2) Die wesentlichen Merkmale der Ware finden sich in der Artikelbeschreibung.</p>
+<p>(3) Für den Verkauf digitaler Produkte gelten die aus der Produktbeschreibung ersichtlichen oder sich sonst aus den Umständen ergebenden Beschränkungen, insbesondere zu Hard- und/oder Softwareanforderungen an die Zielumgebung. Wenn nicht ausdrücklich etwas anderes vereinbart ist, ist Vertragsgegenstand nur die&nbsp;private und gewerbliche Nutzung der Produkte ohne das Recht zur Weiterveräußerung oder Unterlizensierung.</p>
+<h3>§ 4 Preise, Versandkosten und Lieferung</h3>
+<p>(1) Die in den jeweiligen Angeboten angeführten Preise sowie die Versandkosten sind Gesamtpreise und beinhalten alle Preisbestandteile einschließlich aller anfallenden Steuern.</p>
+<p>(2) Der jeweilige Kaufpreis ist vor der Lieferung des Produktes zu leisten (Vorkasse), es sei denn, wir bieten ausdrücklich den Kauf auf Rechnung an. Die Ihnen zur Verfügung stehenden Zahlungsarten sind unter einer entsprechend bezeichneten Schaltfläche im Online-Shop oder im jeweiligen Angebot ausgewiesen. Soweit bei den einzelnen Zahlungsarten nicht anders angegeben, sind die Zahlungsansprüche sofort zur Zahlung fällig.</p>
+<p>(3) Zusätzlich zu den angegebenen Preisen können für die Lieferung von Produkten Versandkosten anfallen, sofern der jeweilige Artikel nicht als versandkostenfrei ausgewiesen ist. Die Versandkosten werden Ihnen auf den Angeboten, ggf. im Warenkorbsystem und auf der Bestellübersicht nochmals deutlich mitgeteilt.</p>
+<p>(4) Alle angebotenen Produkte sind, sofern nicht in der Produktbeschreibung deutlich anders angegeben, sofort versandfertig (Lieferzeit: 7 Tage&nbsp;nach dem Eingang der Zahlung).</p>
+<p>(5) Es bestehen die folgenden Liefergebietsbeschränkungen: Die Lieferung erfolgt in folgende Länder: Deutschland.</p>
+<h3>§ 5 Zurückbehaltungsrecht, Eigentumsvorbehalt</h3>
+<p>(1) Ein Zurückbehaltungsrecht können Sie nur ausüben, soweit es sich um Forderungen aus demselben Vertragsverhältnis handelt.</p>
+<p>(2) Die Ware bleibt bis zur vollständigen Zahlung des Kaufpreises unser Eigentum.</p>
+<h3>§ 6 Widerrufsrecht</h3>
+<p>Als Verbraucher haben Sie ein Widerrufsrecht. Dieses richtet sich nach unserer <a href="https://reginewinkelmann.de/widerrufsbelehrung/">Widerrufsbelehrung</a>.</p>
+<h3>§ 7 Haftung</h3>
+<p>(1) Vorbehaltlich der nachfolgenden Ausnahmen ist unsere Haftung für vertragliche Pflichtverletzungen sowie aus unerlaubter Handlung auf Vorsatz oder grobe Fahrlässigkeit beschränkt.</p>
+<p>(2) Wir haften bei leichter Fahrlässigkeit im Falle der Verletzung des Lebens, des Körpers, der Gesundheit oder bei Verletzung einer vertragswesentlichen Pflicht unbeschränkt. Wenn wir durch leichte Fahrlässigkeit mit der Leistung in Verzug geraten sind, wenn die Leistung unmöglich geworden ist oder wenn wir eine vertragswesentliche Pflicht verletzt haben, ist die Haftung für darauf zurückzuführende Sach- und Vermögensschäden auf den <strong>vertragstypisch vorhersehbaren Schaden</strong> begrenzt. Eine vertragswesentliche Pflicht ist eine solche, deren Erfüllung die ordnungsgemäße Durchführung des Vertrages überhaupt erst ermöglicht, deren Verletzung die Erreichung des Vertragszwecks gefährdet und auf deren Einhaltung Sie regelmäßig vertrauen dürfen. Dazu gehört insbesondere unsere Pflicht zum Tätigwerden und der Erfüllung der vertraglich geschuldeten Leistung, die in § 3 beschrieben wird.</p>
+<h3>§ 8 Vertragssprache</h3>
+<p>Als Vertragssprache steht ausschließlich Deutsch zur Verfügung.</p>
+<h3>§ 9&nbsp;Gewährleistung</h3>
+<p>(1) Die Gewährleistung richtet sich nach den gesetzlichen Bestimmungen.</p>
+<p>(2) Gegenüber Unternehmern beträgt die Gewährleistungsfrist auf gelieferte Sachen 12 Monate.</p>
+<p>(3) Als Verbraucher werden Sie gebeten, die Sache/die digitalen Güter oder die erbrachte Dienstleistung bei Vertragserfüllung umgehend auf Vollständigkeit, offensichtliche Mängel und Transportschäden zu überprüfen und uns sowie dem Spediteur Beanstandungen schnellstmöglich mitzuteilen. Kommen Sie dem nicht nach, hat dies natürlich keine Auswirkung auf Ihre gesetzlichen Gewährleistungsansprüche.</p>
+<h3>§ 10&nbsp;Schlussbestimmungen/Streitbeilegung</h3>
+<p>(1) Es gilt deutsches Recht. Bei Verbrauchern gilt diese Rechtswahl nur, soweit hierdurch der durch zwingende Bestimmungen des Rechts des Staates des gewöhnlichen Aufenthaltes des Verbrauchers gewährte Schutz nicht entzogen wird (Günstigkeitsprinzip).</p>
+<p>(2) Die Bestimmungen des UN-Kaufrechts finden ausdrücklich keine Anwendung.</p>
+<p>(3) Sofern es sich beim Kunden um einen Kaufmann, eine juristische Person des öffentlichen Rechts oder um ein öffentlich-rechtliches Sondervermögen handelt, ist Gerichtsstand für alle Streitigkeiten aus Vertragsverhältnissen zwischen dem Kunden und dem Anbieter der Sitz des Anbieters.</p>
+<p>(4) 
+
+Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit, die du unter <a href="https://ec.europa.eu/consumers/odr" target="_blank">https://ec.europa.eu/consumers/odr</a> findest. Zur Teilnahme an einem Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle sind wir nicht verpflichtet und nicht bereit.
+</p></div>
+            </div>
+        </div>
+    </section>
+    <footer class="py-0">
+        <div class="p-3 mb-2">
+            <div class="container text-center">
+                <div class="row">
+                    <div class="col-12 col-sm-12 col-md-5">
+                        <p class="my-2">2025 © Regine Winkelmann</p>
+                    </div>
+                    <div class="col-2 d-none d-sm-none d-md-block"><img src="assets/img/DachsSymbolEffects.png" width="58" height="56"></div>
+                    <div class="col-12 col-sm-12 col-md-5">
+                        <ul class="list-inline my-2">
+                            <li class="list-inline-item"><a href="impressum.html">Impressum</a></li>
+                            <li class="list-inline-item"><a href="agb.html">AGB</a></li>
+                            <li class="list-inline-item"><a href="widerrufsbelehrung.html">Widerrufsbelehrung</a></li>
+                            <li class="list-inline-item"><a href="versand.html">Versand</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="p-2" style="background: #1c1c1c;">
+            <div class="container text-center">
+                <div class="row">
+                    <div class="col"><div class="vaax-copyright" id="vaax-button" style="color:#fff;">
+    <a href="https://va.ax/" style="color: #fff; text-decoration: none; font-family: Arial, Helvetica, sans-serif;">Webdesign realisiert durch die <i style="content: ''; width: 16px; height: 16px; position: relative; top: 2px; display: inline-block; background-position: center; background-repeat: no-repeat; background-size: contain; background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxODguMjc0IiBoZWlnaHQ9IjE5NC42MiIgdmlld0JveD0iMCAwIDE4OC4yNzQgMTk0LjYyIj4NCiAgPHBhdGggaWQ9IkxvZ29TaW5nbGVXaGl0ZSIgZD0iTTEzOC4yODYsMTguMDdsOTMuODY3LDE0OS42MDdMMjA0LjUxLDE4Mi4zOTFjLTIyLjAxNS0zNS4wNzUtNDMuOTQ0LTcwLTY2LjI0Mi0xMDUuNTIzTDg1LjUwNywxNjEuMDIybDI3LjkyNywxNC44N0wxMzguMywxMzYuMzQ0bDM4LjIyOSw2MC45LTI3LjYxNiwxNC43MTRjLTMuNDQ1LTUuNDMyLTYuODIxLTEwLjc1LTEwLjYxNy0xNi43MjhMMTI3LjQ4MiwyMTIuNjlsLTgzLjYtNDQuMTc3Qzc1LjM3LDExOC4zNDYsMTA2LjY2OCw2OC40NiwxMzguMjg2LDE4LjA3WiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTQzLjg4IC0xOC4wNykiIGZpbGw9IiNmZmYiLz4NCjwvc3ZnPg0K);"></i> <span class="vaax-title">VAAX Multimedia Agentur</span></a>
+  </div></div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/bs-init.js"></script>
+    <script src="assets/js/grayscale.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://js.stripe.com/v3/"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+    <script src="assets/js/Lightbox-Gallery-baguetteBox.min.js"></script>
+    <script src="assets/js/Lightbox-Gallery.js"></script>
+    <script src="assets/js/shop.js"></script>
+</body>
+
+</html>
