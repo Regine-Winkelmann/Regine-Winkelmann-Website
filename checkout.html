@@ -41,7 +41,7 @@
     }).mount('#vue-cart-badge');
   }));
 })();
-</script></li></ul></div></div></nav><header class="masthead shorthead" style="background: url(&quot;assets/img/DachsbuchPromo_004.jpg&quot;) bottom / cover;height: 50vh;"><div class="intro-body"><div class="container"><div class="row"><div class="col-lg-8 mx-auto"><h1 class="brand-heading">Kasse</h1></div></div></div></div></header><section class="text-center py-5 content-section" id="checkout"><div class="container-xl"><div class="row"><div class="mx-auto" data-aos="slide-up"><div id="vue-checkout-app" class="stripe-checkout-container torn" style="visibility: hidden;">
+</script></li></ul></div></div></nav><header class="masthead shorthead" style="background: linear-gradient(rgba(0,0,0,0.62) 0%, rgba(0,0,0,0) 22%), url(&quot;assets/img/DachsbuchPromo_004.webp&quot;);height: 50vh;background-size: auto, cover;"><div class="intro-body"><div class="container"><div class="row"><div class="col-lg-8 mx-auto"><h1 class="brand-heading">Kasse</h1></div></div></div></div></header><section class="text-center py-5 content-section" id="checkout"><div class="container-xl"><div class="row"><div class="mx-auto" data-aos="slide-up"><div id="vue-checkout-app" class="stripe-checkout-container torn" style="visibility: hidden;">
   <!-- Loading Spinner -->
   <div v-if="isLoading" class="d-flex flex-column align-items-center justify-content-center" style="height: 520px;">
     <div class="spinner-border text-primary mb-3" role="status" style="width: 3rem; height: 3rem;">
@@ -70,8 +70,8 @@
   const PUBLISHABLE_KEY_TEST= "pk_test_51RpPrnGSHI4ZzMNSYJ9oVy4H9y7YKVJ0Cr7bLmzvNQkAL9ZPPxDG9jycXSd41TyyLeNc09AKYJtXuFI3vyBDjZwV001ffxZKzp";
 
   // Success-/Cancel-URLs für Test & Live
-  const SUCCESS_URL_TEST = "http://localhost:8000/success.html?session_id={CHECKOUT_SESSION_ID}";
-  const CANCEL_URL_TEST  = "http://localhost:8000/cart.html";
+  const SUCCESS_URL_TEST = "https://reginewinkelmann.de/success.html?session_id={CHECKOUT_SESSION_ID}";
+  const CANCEL_URL_TEST  = "https://reginewinkelmann.de/cart.html";
   const SUCCESS_URL_LIVE = "https://reginewinkelmann.de/success.html?session_id={CHECKOUT_SESSION_ID}";
   const CANCEL_URL_LIVE  = "https://reginewinkelmann.de/cart.html";
 
