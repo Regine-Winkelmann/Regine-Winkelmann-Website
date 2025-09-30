@@ -3,9 +3,28 @@
    =========================== */
 
 /* ---------- 1) Produktkonfiguration ---------- */
+
+// Automatische Test-/Live-Modus Erkennung basierend auf URL
+function detectTestMode() {
+  const hostname = window.location.hostname;
+  
+  // Live-Modus nur für echte Production-Domain
+  const isProductionDomain = hostname === 'reginewinkelmann.de' || hostname === 'www.reginewinkelmann.de';
+  
+  // Test-Modus: Alles außer Production-Domain
+  return !isProductionDomain;
+}
+
 const SHOP_CONFIG = {
-  TestMode: true,                 // im Test-Setup auf true setzen
+  TestMode: detectTestMode(),      // automatische Erkennung basierend auf URL
   Currency: "EUR",
+  
+  // Worker-Endpoints für lokale Entwicklung vs. Production
+  WorkerEndpoints: {
+    development: "http://localhost:8787",     // npm run dev Default-Port
+    production: "https://reginewinkelmannstripe.vaax.workers.dev"
+  },
+  
   Products: [
     {
       key: "book_dachs",
@@ -15,7 +34,7 @@ const SHOP_CONFIG = {
       // Optional: netto in Cents (empfohlen). Falls weggelassen, wird price_label geparst.
       // price_net_cents: 2700,
       price_label: "25,23 €",     // nur fürs UI / Fallback-Parsing
-      thumb: "products/BookSmall.webp",
+      thumb: "/assets/img/products/BookSmall.webp",
       vat_percent: 7              // MwSt-Satz in Prozent
     },
     // weitere Produkte hier ...
@@ -30,6 +49,23 @@ const save = (items) => localStorage.setItem(CART_KEY, JSON.stringify(items));
 
 /* ---------- 3) Hilfen auf Produktsicht ---------- */
 function isTestMode() { return !!SHOP_CONFIG.TestMode; }
+function isDevelopment() {
+  const hostname = window.location.hostname;
+  const protocol = window.location.protocol;
+  
+  return (
+    hostname === 'localhost' || 
+    hostname === '127.0.0.1' ||
+    /^192\.168\.|^10\.|^172\.(1[6-9]|2[0-9]|3[01])\./.test(hostname) || // Private IP ranges
+    hostname.endsWith('.local') || 
+    hostname.endsWith('.test') || 
+    hostname.endsWith('.dev') ||
+    (protocol === 'http:' && /^\d+\.\d+\.\d+\.\d+$/.test(hostname)) // Any IP with http
+  );
+}
+function getWorkerEndpoint() {
+  return isDevelopment() ? SHOP_CONFIG.WorkerEndpoints.development : SHOP_CONFIG.WorkerEndpoints.production;
+}
 function activeStripeId(prod) { return isTestMode() ? prod.product_test : prod.product_live; }
 function findByKey(key) { return SHOP_CONFIG.Products.find(p => p.key === key); }
 function findByStripeId(stripeId) {
@@ -165,6 +201,18 @@ function normalizeCartForCurrentMode() {
 function setTestMode(flag) {
   SHOP_CONFIG.TestMode = !!flag;
   normalizeCartForCurrentMode();
+  console.log(`Shop-Modus geändert zu: ${flag ? 'TEST' : 'LIVE'} (manuell überschrieben)`);
+}
+
+// Debug-Informationen für Entwickler
+function getEnvironmentInfo() {
+  return {
+    hostname: window.location.hostname,
+    protocol: window.location.protocol,
+    testMode: isTestMode(),
+    development: isDevelopment(),
+    workerEndpoint: getWorkerEndpoint()
+  };
 }
 
 /* ---------- 7) Globales API-Objekt ---------- */
@@ -180,11 +228,31 @@ window.Shop = {
   // Preise/Format
   formatCents,
   unitNetCentsForStripeId, unitGrossCentsForStripeId, getVatPercentForStripeId,
-  // Mode
-  isTestMode, setTestMode,
+  // Mode & Environment
+  isTestMode, setTestMode, isDevelopment, getWorkerEndpoint, getEnvironmentInfo,
+  // API URLs
+  getApiUrl(endpoint) {
+    const baseUrl = getWorkerEndpoint();
+    switch (endpoint) {
+      case 'checkout': return `${baseUrl}/create-checkout-session`;
+      case 'invoice': return `${baseUrl}/get-invoice-url`;
+      case 'webhook': return `${baseUrl}/webhook`;
+      default: return `${baseUrl}/${endpoint}`;
+    }
+  },
   // Events
   onCartChange(handler) { window.addEventListener("shop:cart-changed", e => handler(e.detail)); }
 };
 
 /* ---------- 8) Init ---------- */
+// Environment-Info beim Laden ausgeben
+console.log('🛍️ Shop initialisiert:', getEnvironmentInfo());
+
+// Warnung bei lokaler Entwicklung
+if (isDevelopment()) {
+  console.log('🔧 Entwicklungsmodus erkannt!');
+  console.log('💡 Worker-Endpoint:', getWorkerEndpoint());
+  console.log('⚠️ Stelle sicher, dass der Worker läuft: npm run dev');
+}
+
 cartBroadcast();
